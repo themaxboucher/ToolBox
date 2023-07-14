@@ -19,7 +19,7 @@ function SubmitForm() {
         </div>
         <div className={classes.control}>
           <label htmlFor="twitter">Twitter Account (optional)</label>
-          <input type="url" id="twitter" required="false"></input>
+          <input type="url" id="twitter" required={false}></input>
         </div>
         <div className={classes.control}>
           <label htmlFor="description">Description</label>

@@ -6,10 +6,11 @@
   padding: 0 25px;
 }
 
-.logo {
+.logo a {
   font-size: larger;
   font-weight: bold;
   color: white;
+  text-decoration: none;
 }
 
 .header ul {
@@ -24,16 +25,17 @@
   margin-left: 3rem;
 }
 
-.header a {
+.header nav a {
   text-decoration: none;
+  color: white;
   font-size: 15px;
   font-weight: 500;
   transition: 0.2s;
   cursor: pointer;
 }
 
-.header a:hover,
-.header a:active,
-.header a.active {
+.header nav a:hover,
+.header nav a:active,
+.header nav a.active {
   color: #705df2;
 }

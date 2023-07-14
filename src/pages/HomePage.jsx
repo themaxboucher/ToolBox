@@ -1,7 +1,13 @@
+import Hero from "../componenents/Hero";
+import List from "../componenents/List";
+import Sort from "../componenents/Sort";
+
 function HomePage() {
   return (
     <section>
-      <h1>Home Page</h1>
+      <Hero />
+      <Sort />
+      <List />
     </section>
   );
 }

@@ -23,7 +23,7 @@ function List() {
         'Midjourney lets you create images (paintings, digital art, logos and much more) simply by writing a prompt. Try to prompt it: - "A deep ocean monster" - "The dawn of a universe" - "The iron throne" And check out its results',
       link: "https://www.midjourney.com/home/",
       twitter: "https://twitter.com/midjourney",
-      tags: ["image generation"],
+      tags: ["Image Generation"],
     },
   ];
 

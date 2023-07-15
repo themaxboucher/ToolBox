@@ -1,10 +1,15 @@
+import Tag from "../UI/Tag";
+import TagList from "../UI/TagList";
+import classes from "./Sort.module.css";
+
 function Sort() {
   return (
-    <div>
+    <div className={classes.sort}>
       <label htmlFor="catagories">SORT BY:</label>
-      <select id="catagories">
-        <option>All Catagories</option>
-      </select>
+      <TagList>
+        <Tag>LLM</Tag>
+        <Tag>Image Generation</Tag>
+      </TagList>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import Modal from "../UI/Modal";
 import ModalBackdrop from "../UI/ModalBackdrop";
 import classes from "./Tool.module.css";
+import Tag from "../UI/Tag";
 
 function Tool(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -67,7 +68,14 @@ function Tool(props) {
               </div>
             </div>
 
-            <div><p>{props.description}</p></div>
+            <div>
+              <p>{props.description}</p>
+            </div>
+            <div>
+              {props.tags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </div>
           </div>
         </Modal>
       )}

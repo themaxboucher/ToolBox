@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .display .right {
@@ -11,33 +12,52 @@
     gap: 15px;
 }
 
-.display .thumbnail {
-  height: 55px;
-  width: 55px;
+.thumbnail {
+  height: 60px;
+  width: 60px;
 }
 
-.display .thumbnail img {
+.thumbnail img {
   width: 100%;
   object-fit: cover;
   border-radius: 6px;
 }
 
-.display .content h3 {
+.content h3 {
     font-size: 16px;
     line-height: 0.5;
 }
 
-.display .content p {
+.content p {
     font-size: 14px;
     font-weight: 500;
     opacity: 0.8;
     line-height: 0.5;
 }
 
-.display .links {
+.links {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 10px;
   padding: 5px;
+}
+
+.modal {
+    padding: 40px 70px;
+}
+
+.modal .content h3 {
+    font-size: 24px;
+}
+
+.modal .content p {
+    font-size: 16px;
+}
+
+.modal .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 30px;
 }

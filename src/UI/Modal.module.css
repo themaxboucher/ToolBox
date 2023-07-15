@@ -1,0 +1,18 @@
+.modal {
+  width: 70%;
+  z-index: 10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.exit {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  right: 7px;
+  top: 7px;
+}

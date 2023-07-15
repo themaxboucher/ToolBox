@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { LinkIcon } from "@heroicons/react/24/solid";
 import Card from "../UI/Card";
 import Modal from "../UI/Modal";
 import ModalBackdrop from "../UI/ModalBackdrop";
@@ -36,7 +37,7 @@ function Tool(props) {
                 </a>
               )}
               <a href={props.link} target="_blank">
-                URL
+                <LinkIcon className={classes.icon} />
               </a>
             </div>
           </div>
@@ -63,7 +64,7 @@ function Tool(props) {
                   </a>
                 )}
                 <a href={props.link} target="_blank">
-                  URL
+                  <LinkIcon className={classes.icon} />
                 </a>
               </div>
             </div>

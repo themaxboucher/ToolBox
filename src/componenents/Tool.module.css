@@ -6,10 +6,10 @@
 }
 
 .display .right {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
 }
 
 .thumbnail {
@@ -24,15 +24,15 @@
 }
 
 .content h3 {
-    font-size: 16px;
-    line-height: 0.5;
+  font-size: 16px;
+  line-height: 0.5;
 }
 
 .content p {
-    font-size: 14px;
-    font-weight: 500;
-    opacity: 0.8;
-    line-height: 0.5;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+  line-height: 0.5;
 }
 
 .links {
@@ -43,21 +43,39 @@
   padding: 5px;
 }
 
+.links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.links a:hover {
+  background-color: #161618;
+}
+
+.icon {
+  height: 24px;
+  color: white;
+}
+
 .modal {
-    padding: 40px 70px;
+  padding: 40px 70px;
 }
 
 .modal .content h3 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .modal .content p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .modal .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
 }

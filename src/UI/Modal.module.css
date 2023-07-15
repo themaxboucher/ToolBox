@@ -16,3 +16,17 @@
   right: 7px;
   top: 7px;
 }
+
+.icon {
+    height: 24px;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.icon:hover {
+    background-color: #161618;
+}
+
+

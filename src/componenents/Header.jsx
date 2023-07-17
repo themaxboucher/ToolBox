@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <Link to="/">Cool App</Link>
+        <Link to="/">ToolBox</Link>
       </div>
       <nav>
         <ul>

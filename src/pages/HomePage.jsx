@@ -6,7 +6,7 @@ function HomePage() {
   return (
     <section>
       <Hero headerText="Discover the best new AI tools" subheaderText="Supercharge your productivity with artificial intelligence." />
-      <Sort />
+      <Sort priceFilter="All" categoryFilter="Featured"/>
       <List />
     </section>
   );

@@ -1,9 +1,8 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import classes from "./Select.module.css";
 import Card from "./Card";
 import Tag from "./Tag";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
-import FiltersContext from "../store/FiltersContext";
 
 function Select(props) {
   const [optionsAreOpen, setOptionsAreOpen] = useState(false);
@@ -14,15 +13,12 @@ function Select(props) {
       setOptionsAreOpen(true);
     }
   }
-  const filtersCtx = useContext(FiltersContext);
-  const priceFilter = filtersCtx.priceFilter;
-  const categoryFilter = filtersCtx.categoryFilter;
 
   function selectBtnText() {
     if (props.type === "price") {
-      return priceFilter === "All" ? "All Prices" : priceFilter;
+      return props.currentFilter === "All" ? "All Prices" : props.currentFilter;
     } else if (props.type === "category") {
-      return categoryFilter === "Featured" ? "All Categories" : categoryFilter;
+      return props.currentFilter === "Featured" ? "All Categories" : props.currentFilter;
     }
   }
 
@@ -36,7 +32,7 @@ function Select(props) {
         <div className={classes.dropdown}>
           <Card>
             {props.options.map((option) => (
-              <Tag key={option} type={props.type}>
+              <Tag key={option} type={props.type} currentFilter={props.currentFilter}>
                 {option}
               </Tag>
             ))}

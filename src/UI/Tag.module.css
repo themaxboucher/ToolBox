@@ -1,4 +1,5 @@
 .tag {
+  text-decoration: none;
   font-size: 12px;
   font-weight: 600;
   padding: 5px 10px;
@@ -15,6 +16,7 @@
 }
 
 .selectedTag {
+  text-decoration: none;
   font-size: 12px;
   font-weight: 600;
   padding: 5px 10px;

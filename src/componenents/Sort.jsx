@@ -1,18 +1,13 @@
-import Tag from "../UI/Tag";
-import TagList from "../UI/TagList";
 import classes from "./Sort.module.css";
-import Card from "../UI/Card";
 import Select from "../UI/Select";
+import { categoryOptions, priceOptions } from "../data/FilterOptions";
 
-function Sort() {
-  const priceOptions = ["All", "Free", "Paid"];
-  const categoryOptions = ["Featured", "Chat", "Writing", "Art & Images", "Video", "Audio", "Developer Tools", "SMM", "SEO"];
-
+function Sort(props) {
   return (
     <div className={classes.sort}>
       <label>SORT BY:</label>
-      <Select type="price" options={priceOptions}/>
-      <Select type="category" options={categoryOptions} />
+      <Select type="price" options={priceOptions} currentFilter={props.priceFilter} />
+      <Select type="category" options={categoryOptions} currentFilter={props.categoryFilter} />
     </div>
   );
 }

@@ -66,7 +66,7 @@ function App() {
                   priceFilter={filterCombo.priceFilter}
                   categoryFilter={filterCombo.categoryFilter}
                 />
-                <List />
+                <List filterCombo={filterCombo} />
               </section>
             </Route>
           ))}

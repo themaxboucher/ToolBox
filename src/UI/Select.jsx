@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import classes from "./Select.module.css";
 import Card from "./Card";
 import Tag from "./Tag";
@@ -14,16 +14,40 @@ function Select(props) {
     }
   }
 
+  // Close dropdown if users clicks outside dropdown
+  const dropdownRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Check if the click is outside the dropdown
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOptionsAreOpen(false);
+      }
+    };
+
+    // Attach the event listener to the document when the dropdown is visible
+    if (optionsAreOpen) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    // Clean up the event listener when the dropdown is not visible
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [optionsAreOpen]);
+  // TODO: Fix bug where select doesn't open if you click on the arrow
+
   function selectBtnText() {
     if (props.type === "price") {
       return props.currentFilter === "All" ? "All Prices" : props.currentFilter;
     } else if (props.type === "category") {
-      return props.currentFilter === "Featured" ? "All Categories" : props.currentFilter;
+      return props.currentFilter === "Featured"
+        ? "All Categories"
+        : props.currentFilter;
     }
   }
 
   return (
-    <div>
+    <div ref={dropdownRef}>
       <button className={classes.selectBtn} onClick={toggleOptionsHandler}>
         <span>{selectBtnText()}</span>
         {optionsAreOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
@@ -32,7 +56,12 @@ function Select(props) {
         <div className={classes.dropdown}>
           <Card>
             {props.options.map((option) => (
-              <Tag key={option} type={props.type} currentFilter={props.currentFilter}>
+              <Tag
+                key={option}
+                type={props.type}
+                currentFilter={props.currentFilter}
+                close={toggleOptionsHandler}
+              >
                 {option}
               </Tag>
             ))}

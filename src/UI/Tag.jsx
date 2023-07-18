@@ -115,6 +115,7 @@ function Tag(props) {
     <Link
       to={tagPath()}
       className={filterIsSelected() ? classes.selectedTag : classes.tag}
+      onClick={props.close}
     >
       {props.children}
     </Link>

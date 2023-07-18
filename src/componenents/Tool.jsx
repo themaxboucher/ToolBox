@@ -72,6 +72,15 @@ function Tool(props) {
             <div>
               <p>{props.description}</p>
             </div>
+
+            <div>
+              <h3>Key Features</h3>
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+              </ul>
+            </div>
             <div>
               {props.tags.map((tag) => (
                 <Tag key={tag}>{tag}</Tag>

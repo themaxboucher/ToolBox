@@ -1,12 +1,12 @@
 .sort {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .sort label {
-    font-weight: 600;
-    font-size: 14px;
-    opacity: 0.8;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0.8;
 }

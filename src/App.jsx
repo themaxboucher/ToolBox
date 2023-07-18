@@ -7,6 +7,7 @@ import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import HomePage from "./pages/HomePage";
 import SubmitPage from "./pages/SubmitPage";
 import Layout from "./layout/Layout";
+import ChatToolsPage from "./pages/ChatToolsPage";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path="/submit">
             <SubmitPage />
+          </Route>
+          <Route path="/chat-tools">
+            <ChatToolsPage />
           </Route>
         </Switch>
       </Layout>

@@ -1,0 +1,36 @@
+.selectBtn {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #1e1e20;
+  padding: 8px 15px;
+  border: solid 1px #454549;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: fit-content;
+}
+
+.selectBtn:hover {
+  border-color: #705df2;
+}
+
+.selectBtn svg {
+  height: 18px;
+}
+
+.dropdown {
+  z-index: 2;
+  position: absolute;
+  max-width: 400px;
+}
+
+.dropdown div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  flex-wrap: wrap;
+}

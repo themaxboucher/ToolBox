@@ -1,10 +1,10 @@
 import classes from "./Hero.module.css";
 
-function Hero() {
+function Hero(props) {
   return (
     <div className={classes.hero}>
-      <h1>Discover the best new AI tools</h1>
-      <p>Stay ahead of the curb with the latest tools and products using artifical intelligence.</p>
+      <h1>{props.headerText}</h1>
+      <p>{props.subheaderText}</p>
     </div>
   );
 }

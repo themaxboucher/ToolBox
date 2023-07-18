@@ -12,7 +12,8 @@ function List() {
         "OpenAI has released a model called ChatGPT which interacts in a conversational way. The dialogue format makes it possible for ChatGPT to answer followup questions, admit its mistakes, challenge incorrect premises, and reject inappropriate requests.",
       link: "https://chat.openai.com/",
       twitter: false,
-      tags: ["LLM"],
+      price: "Free",
+      tags: ["Chat", "Writing"],
     },
     {
       title: "Midjourney",
@@ -23,7 +24,8 @@ function List() {
         'Midjourney lets you create images (paintings, digital art, logos and much more) simply by writing a prompt. Try to prompt it: - "A deep ocean monster" - "The dawn of a universe" - "The iron throne" And check out its results',
       link: "https://www.midjourney.com/home/",
       twitter: "https://twitter.com/midjourney",
-      tags: ["Image Generation"],
+      price: "Paid",
+      tags: ["Art & Images"],
     },
   ];
 

@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { LinkIcon } from "@heroicons/react/24/solid";
+import { BookmarkIcon } from "@heroicons/react/24/outline";
 import Card from "../UI/Card";
 import Modal from "../UI/Modal";
 import ModalBackdrop from "../UI/ModalBackdrop";
 import classes from "./Tool.module.css";
 import Tag from "../UI/Tag";
+import { ArrowTopRightOnSquareIcon, BoltIcon } from "@heroicons/react/24/solid";
 
 function Tool(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -18,7 +19,7 @@ function Tool(props) {
 
   return (
     <>
-      <li onClick={openModalHandler}>
+      <li onClick={openModalHandler} className={classes.tool}>
         <Card>
           <div className={classes.display}>
             <div className={classes.right}>
@@ -26,18 +27,15 @@ function Tool(props) {
                 <img src={props.thumbnail} alt={props.title}></img>
               </div>
               <div className={classes.content}>
-                <h3>{props.title}</h3>
+                <h3><span>{props.title}</span><a href={props.link} target="_blank"><ArrowTopRightOnSquareIcon className={classes.icon} /></a></h3>
                 <p>{props.tagline}</p>
+                <p className={classes.price}><span>{props.price}</span>  •  {props.tags.map(tag => <a key={tag}>{tag}</a>)}</p>
               </div>
             </div>
             <div className={classes.links}>
-              {props.twitter && (
-                <a href={props.twitter} target="_blank">
-                  TWT
-                </a>
-              )}
-              <a href={props.link} target="_blank">
-                <LinkIcon className={classes.icon} />
+              <a>
+                <BookmarkIcon className={classes.icon} />
+                <span>300</span>
               </a>
             </div>
           </div>
@@ -53,19 +51,16 @@ function Tool(props) {
                   <img src={props.thumbnail} alt={props.title}></img>
                 </div>
                 <div className={classes.content}>
-                  <h3>{props.title}</h3>
+                  <h2>{props.title}</h2>
                   <p>{props.tagline}</p>
+                  <p className={classes.price}><span>{props.price}</span>  •  {props.tags.map(tag => <a key={tag}>{tag}</a>)}</p>
                 </div>
               </div>
               <div className={classes.links}>
-                {props.twitter && (
-                  <a href={props.twitter} target="_blank">
-                    TWT
-                  </a>
-                )}
                 <a href={props.link} target="_blank">
-                  <LinkIcon className={classes.icon} />
+                  Visit
                 </a>
+                <a><BookmarkIcon className={classes.icon} /><span>Save</span></a>
               </div>
             </div>
 
@@ -74,17 +69,12 @@ function Tool(props) {
             </div>
 
             <div>
-              <h3>Key Features</h3>
-              <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+              <h3><BoltIcon className={classes.icon} /><span>Key Features</span></h3>
+              <ul className={classes.keyFeatures}>
+                {props.keyFeatures.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
               </ul>
-            </div>
-            <div>
-              {props.tags.map((tag) => (
-                <Tag key={tag}>{tag}</Tag>
-              ))}
             </div>
           </div>
         </Modal>

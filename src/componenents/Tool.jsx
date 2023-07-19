@@ -29,7 +29,7 @@ function Tool(props) {
               <div className={classes.content}>
                 <h3><span>{props.title}</span><a href={props.link} target="_blank"><ArrowTopRightOnSquareIcon className={classes.icon} /></a></h3>
                 <p>{props.tagline}</p>
-                <p className={classes.price}><span>{props.price}</span>  •  {props.tags.map(tag => <a key={tag}>{tag}</a>)}</p>
+                <p className={classes.tags}><span>{props.price}</span>  •  {props.tags.map(tag => <a key={tag}>{tag}</a>)}</p>
               </div>
             </div>
             <div className={classes.links}>

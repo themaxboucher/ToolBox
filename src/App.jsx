@@ -11,6 +11,7 @@ import { possibleFilterCombos } from "./data/FilterOptions";
 import Hero from "./componenents/Hero";
 import List from "./componenents/List";
 import Sort from "./componenents/Sort";
+import Signup from "./componenents/Signup";
 
 function App() {
   console.log(possibleFilterCombos);
@@ -38,9 +39,18 @@ function App() {
       return `${priceFilter} AI ${categoryFilter} Tools`;
     }
   }
+
+  const [signupIsOpen, setSignupIsOpen] = useState(true);
+  function openSignupHandler() {
+    setSignupIsOpen(true);
+  }
+  function closeSignupHandler() {
+    setSignupIsOpen(false);
+  }
+
   return (
     <>
-      <Layout>
+      <Layout openSignup={openSignupHandler}>
         <Switch>
           {/* <Route path="/" exact>
             <HomePage />
@@ -74,6 +84,7 @@ function App() {
             <SubmitPage />
           </Route>
         </Switch>
+        {signupIsOpen && <Signup closeSignup={closeSignupHandler} />}
       </Layout>
     </>
   );

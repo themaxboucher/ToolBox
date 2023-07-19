@@ -35,11 +35,11 @@
   align-items: baseline;
 }
 
-.header li {
+.header nav li {
   margin-left: 3rem;
 }
 
-.header nav a {
+.header .link {
   text-decoration: none;
   color: white;
   font-size: 15px;
@@ -48,8 +48,15 @@
   cursor: pointer;
 }
 
-.header nav a:hover,
-.header nav a:active,
-.header nav a.active {
+.header .link:hover,
+.header .link:active,
+.header .link.active {
   color: #636CFE;
+}
+
+.header .auth {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
 }

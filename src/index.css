@@ -16,3 +16,43 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+.btn {
+  text-decoration: none;
+  background-color: #636CFE;
+  color: white;
+  padding: 10px 20px;
+  border: solid 1px #737CFF;
+  border-radius: 6px;
+  transition: 0.2s;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #737CFF;
+}
+
+.btn-alt {
+  text-decoration: none;
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  border: solid 1px #3F3D4D;
+  border-radius: 6px;
+  transition: 0.2s;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.btn-alt:hover {
+  background-color: #3F3D4D;
+}

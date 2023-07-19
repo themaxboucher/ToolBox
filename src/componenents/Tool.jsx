@@ -57,10 +57,10 @@ function Tool(props) {
                 </div>
               </div>
               <div className={classes.links}>
-                <a href={props.link} target="_blank" className={classes.btn}>
+                <a href={props.link} target="_blank" className="btn">
                   Visit
                 </a>
-                <a className={classes.btn}><BookmarkIcon className={classes.icon} /><span>Save</span></a>
+                <a className="btn"><BookmarkIcon className={classes.icon} /><span>Save</span></a>
               </div>
             </div>
 

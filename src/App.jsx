@@ -12,6 +12,7 @@ import Hero from "./componenents/Hero";
 import List from "./componenents/List";
 import Sort from "./componenents/Sort";
 import Signup from "./componenents/Signup";
+import AccountPage from "./pages/AccountPage";
 
 function App() {
   console.log(possibleFilterCombos);
@@ -82,6 +83,9 @@ function App() {
           ))}
           <Route path="/submit">
             <SubmitPage />
+          </Route>
+          <Route path="/account">
+            <AccountPage />
           </Route>
         </Switch>
         {signupIsOpen && <Signup closeSignup={closeSignupHandler} />}

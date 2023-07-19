@@ -5,14 +5,14 @@
   padding: 5px 10px;
   width: fit-content;
   border-radius: 6px;
-  background-color: #25223e;
-  border: solid 1px #25223e;
-  color: #604aef;
+  background-color: #373a797b;
+  border: solid 1px #373a797b;
+  color: #636CFE;
   cursor: pointer;
 }
 
 .tag:hover {
-  border: solid 1px #604aef;
+  border: solid 1px #636CFE;
 }
 
 .selectedTag {
@@ -22,8 +22,8 @@
   padding: 5px 10px;
   width: fit-content;
   border-radius: 6px;
-  background-color: #604aef;
-  border: solid 1px #604aef;
+  background-color: #636CFE;
+  border: solid 1px #636CFE;
   color: white;
   cursor: pointer;
 }

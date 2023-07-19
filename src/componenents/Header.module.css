@@ -7,10 +7,24 @@
 }
 
 .logo a {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo a svg{
+  height: 20px;
+  color: #636CFE;
+}
+
+.logo a span {
   font-size: larger;
   font-weight: bold;
-  color: white;
-  text-decoration: none;
+  background: -webkit-linear-gradient(#eee, #b4b4b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .header ul {
@@ -37,5 +51,5 @@
 .header nav a:hover,
 .header nav a:active,
 .header nav a.active {
-  color: #705df2;
+  color: #636CFE;
 }

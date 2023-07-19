@@ -1,0 +1,9 @@
+.backgroundImage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.2;
+    z-index: -1;
+}

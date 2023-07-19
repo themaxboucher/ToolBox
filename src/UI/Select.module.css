@@ -1,9 +1,15 @@
 .selectBtn {
   font-size: 14px;
   font-weight: 500;
-  background-color: #1e1e20;
+  background: rgba(6, 4, 25, 0.2);
+  background: linear-gradient(
+    0deg,
+    rgba(31, 28, 65, 0.2) 0%,
+    rgba(6, 4, 25, 0.2) 100%
+  );
+  backdrop-filter: blur(5px);
   padding: 8px 15px;
-  border: solid 1px #454549;
+  border: solid 1px #3F3D4D;
   border-radius: 6px;
   cursor: pointer;
   display: flex;
@@ -11,10 +17,11 @@
   align-items: center;
   gap: 15px;
   width: fit-content;
+  transition: 0.2s;
 }
 
 .selectBtn:hover {
-  border-color: #705df2;
+  border-color: #636CFE;
 }
 
 .selectBtn svg {
@@ -24,7 +31,7 @@
 .dropdown {
   z-index: 2;
   position: absolute;
-  max-width: 400px;
+  max-width: 350px;
 }
 
 .dropdown div {

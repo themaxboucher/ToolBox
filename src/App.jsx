@@ -29,7 +29,7 @@ function App() {
 
   function filterComboHeaderText(priceFilter, categoryFilter) {
     if (priceFilter === "All" && categoryFilter == "Featured") {
-      return "Discover AI Tools";
+      return "Find the best new AI tools";
     } else if (priceFilter === "All" && categoryFilter !== "Featured") {
       return `AI ${categoryFilter} Tools`;
     } else if (priceFilter !== "All" && categoryFilter === "Featured") {

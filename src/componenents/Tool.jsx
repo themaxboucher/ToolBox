@@ -33,7 +33,7 @@ function Tool(props) {
               </div>
             </div>
             <div className={classes.links}>
-              <a>
+              <a className={classes.actions}>
                 <BookmarkIcon className={classes.icon} />
                 <span>300</span>
               </a>
@@ -57,10 +57,10 @@ function Tool(props) {
                 </div>
               </div>
               <div className={classes.links}>
-                <a href={props.link} target="_blank">
+                <a href={props.link} target="_blank" className={classes.btn}>
                   Visit
                 </a>
-                <a><BookmarkIcon className={classes.icon} /><span>Save</span></a>
+                <a className={classes.btn}><BookmarkIcon className={classes.icon} /><span>Save</span></a>
               </div>
             </div>
 

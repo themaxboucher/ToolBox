@@ -38,7 +38,7 @@ function Select(props) {
 
   function selectBtnText() {
     if (props.type === "price") {
-      return props.currentFilter === "All" ? "All Prices" : props.currentFilter;
+      return props.currentFilter === "All" ? "All Pricing" : props.currentFilter;
     } else if (props.type === "category") {
       return props.currentFilter === "Featured"
         ? "All Categories"

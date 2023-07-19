@@ -1,6 +1,13 @@
 .card {
-    background-color: #1E1E20;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(6, 4, 25, 0.2);
+  background: linear-gradient(
+    0deg,
+    rgb(27, 25, 44, 0.7) 0%,
+    rgba(31, 28, 65, 0.2) 100%
+  );
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: solid 1px #1F1D2D;
+  backdrop-filter: blur(5px);
 }

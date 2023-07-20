@@ -59,4 +59,10 @@
   justify-content: end;
   align-items: center;
   gap: 1rem;
+  width: 140px;
+}
+
+.header .auth .profilePic {
+  height: 40px;
+  border-radius: 8px;
 }

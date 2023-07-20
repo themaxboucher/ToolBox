@@ -2,7 +2,13 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import classes from "./Header.module.css";
 import { RectangleStackIcon } from "@heroicons/react/24/solid";
 
+// Firebase imports
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../Utilities/firebase";
+
 function Header(props) {
+  const [user] = useAuthState(auth);
+
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
@@ -30,14 +36,22 @@ function Header(props) {
           </li>
         </ul>
       </nav>
-      <ul className={classes.auth}>
-        <li>
-          <a className={classes.link}>Login</a>
-        </li>
-        <li>
-          <button onClick={props.openSignup} className="btn">Sign Up</button>
-        </li>
-      </ul>
+      <div className={classes.auth}>
+        {!user ? (
+          <>
+            <a className={classes.link} onClick={props.openAuthModal}>Login</a>
+            <button onClick={props.openAuthModal} className="btn">
+              Sign Up
+            </button>
+          </>
+        ) : (
+          <div>
+            <Link to="/account">
+              <img src={user.photoURL} alt={user.displayName} className={classes.profilePic} />
+            </Link>
+          </div>
+        )}
+      </div>
     </header>
   );
 }

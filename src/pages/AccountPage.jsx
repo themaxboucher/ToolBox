@@ -1,27 +1,28 @@
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import List from "../componenents/List";
+import UserInfo from "../componenents/UserInfo";
 
 // Firebase imports
 import { auth } from "../Utilities/firebase";
-import { signOut } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function AccountPage() {
-    // Logout
-    const logout = async () => {
-        const logoutConfirm = confirm('Are you sure you want to log out?')
-        if (logoutConfirm == true) {
-            await signOut(auth);
-        }
-    }
+  const [user] = useAuthState(auth);
 
-    return <section>
-        <div>
-            <div><img src="https://uploads-ssl.webflow.com/5a9ee6416e90d20001b20038/635aa4d8be2e8c992c37b042_horizontal%20(34).svg" /></div>
-            <div><h3>Name</h3><p>emailaddress@gmail.com</p></div>
-            <button onClick={logout} className="btn-alt"><span>Logout</span></button>
-        </div>
+  // Block page from non authenticated users
+  const history = useHistory();
+  if (!user) history.replace("/");
+
+  if (user) // Only render content if user is authenticated
+    return (
+      <section>
+        <UserInfo />
         <h2>Saved Tools</h2>
-        <List filterCombo={{priceFilter: "All", categoryFilter: "Featured"}} />
-    </section>
+        <List
+          filterCombo={{ priceFilter: "All", categoryFilter: "Featured" }}
+        />
+      </section>
+    );
 }
 
 export default AccountPage;

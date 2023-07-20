@@ -5,7 +5,7 @@ import classes from "./Layout.module.css";
 function Layout(props) {
     return <div>
         <BackgroundImage />
-        <Header />
+        <Header openSignup={props.openAuthModal}/>
         <main className={classes.main}>{props.children}</main>
     </div>
 }

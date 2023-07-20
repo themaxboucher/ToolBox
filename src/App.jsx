@@ -11,7 +11,7 @@ import { possibleFilterCombos } from "./data/FilterOptions";
 import Hero from "./componenents/Hero";
 import List from "./componenents/List";
 import Sort from "./componenents/Sort";
-import Signup from "./componenents/Signup";
+import AuthModal from "./componenents/AuthModal";
 import AccountPage from "./pages/AccountPage";
 
 function App() {
@@ -41,17 +41,17 @@ function App() {
     }
   }
 
-  const [signupIsOpen, setSignupIsOpen] = useState(true);
-  function openSignupHandler() {
-    setSignupIsOpen(true);
+  const [authModalIsOpen, setAuthModalIsOpen] = useState(true);
+  function openAuthModalHandler() {
+    setAuthModalIsOpen(true);
   }
-  function closeSignupHandler() {
-    setSignupIsOpen(false);
+  function closeAuthModalHandler() {
+    setAuthModalIsOpen(false);
   }
 
   return (
     <>
-      <Layout openSignup={openSignupHandler}>
+      <Layout openAuthModal={openAuthModalHandler}>
         <Switch>
           {/* <Route path="/" exact>
             <HomePage />
@@ -88,7 +88,7 @@ function App() {
             <AccountPage />
           </Route>
         </Switch>
-        {signupIsOpen && <Signup closeSignup={closeSignupHandler} />}
+        {authModalIsOpen && <AuthModal closeAuthModal={closeAuthModalHandler} />}
       </Layout>
     </>
   );

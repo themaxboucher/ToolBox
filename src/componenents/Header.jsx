@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import classes from "./Header.module.css";
 import { RectangleStackIcon } from "@heroicons/react/24/solid";
+import { useContext } from "react";
+import AuthModalContext from "../store/AuthModalContext";
 
 // Firebase imports
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../Utilities/firebase";
 
-function Header(props) {
+function Header() {
   const [user] = useAuthState(auth);
+
+  //Context for the authentication modal
+  const AuthModalCtx = useContext(AuthModalContext);
 
   return (
     <header className={classes.header}>
@@ -39,8 +44,8 @@ function Header(props) {
       <div className={classes.auth}>
         {!user ? (
           <>
-            <a className={classes.link} onClick={props.openAuthModal}>Login</a>
-            <button onClick={props.openAuthModal} className="btn">
+            <a className={classes.link} onClick={AuthModalCtx.openAuthModal}>Login</a>
+            <button onClick={AuthModalCtx.openAuthModal} className="btn">
               Sign Up
             </button>
           </>

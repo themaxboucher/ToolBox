@@ -6,10 +6,10 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 // Firebase imports
 import { auth } from "../Utilities/firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { useContext } from "react";
+import AuthModalContext from "../store/AuthModalContext";
 
 function AuthModal(props) {
-    const history = useHistory();
-
   // Sign in with google
   const googleProvider = new GoogleAuthProvider();
   const googleLogin = async () => {
@@ -21,9 +21,12 @@ function AuthModal(props) {
     }
   };
 
+  //Context for the authentication modal
+  const AuthModalCtx = useContext(AuthModalContext);
+
   return (
     <div>
-      <Modal onClick={props.closeAuthModal}>
+      <Modal onClick={AuthModalCtx.closeAuthModal}>
         <div className={classes.authForm}>
           <h2>Sign Up</h2>
           <button onClick={googleLogin} className="btn-alt">

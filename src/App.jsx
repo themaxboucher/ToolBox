@@ -1,4 +1,3 @@
-import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -13,6 +12,8 @@ import List from "./componenents/List";
 import Sort from "./componenents/Sort";
 import AuthModal from "./componenents/AuthModal";
 import AccountPage from "./pages/AccountPage";
+import { useContext } from "react";
+import AuthModalContext from "./store/AuthModalContext";
 
 function App() {
   console.log(possibleFilterCombos);
@@ -41,17 +42,12 @@ function App() {
     }
   }
 
-  const [authModalIsOpen, setAuthModalIsOpen] = useState(true);
-  function openAuthModalHandler() {
-    setAuthModalIsOpen(true);
-  }
-  function closeAuthModalHandler() {
-    setAuthModalIsOpen(false);
-  }
+  //Context for the authentication modal
+  const AuthModalCtx = useContext(AuthModalContext);
 
   return (
     <>
-      <Layout openAuthModal={openAuthModalHandler}>
+      <Layout>
         <Switch>
           {/* <Route path="/" exact>
             <HomePage />
@@ -88,7 +84,7 @@ function App() {
             <AccountPage />
           </Route>
         </Switch>
-        {authModalIsOpen && <AuthModal closeAuthModal={closeAuthModalHandler} />}
+        {AuthModalCtx.authModalIsOpen && <AuthModal />}
       </Layout>
     </>
   );

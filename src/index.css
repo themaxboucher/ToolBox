@@ -31,6 +31,8 @@
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -51,6 +53,8 @@
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .btn-alt:hover {

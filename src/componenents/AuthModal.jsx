@@ -10,19 +10,20 @@ import { useContext } from "react";
 import AuthModalContext from "../store/AuthModalContext";
 
 function AuthModal(props) {
+  //Context for the authentication modal
+  const AuthModalCtx = useContext(AuthModalContext);
+
   // Sign in with google
   const googleProvider = new GoogleAuthProvider();
   const googleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       console.log(result.user);
+      AuthModalCtx.closeAuthModal();
     } catch (error) {
       console.log(error);
     }
   };
-
-  //Context for the authentication modal
-  const AuthModalCtx = useContext(AuthModalContext);
 
   return (
     <div>

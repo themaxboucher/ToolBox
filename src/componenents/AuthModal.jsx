@@ -4,6 +4,7 @@ import classes from "./AuthModal.module.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { FcGoogle } from "react-icons/fc";
 import { IconContext } from "react-icons";
+import { RectangleStackIcon } from "@heroicons/react/24/solid";
 
 // Firebase imports
 import { auth } from "../Utilities/firebase";
@@ -31,10 +32,14 @@ function AuthModal(props) {
     <div>
       <Modal onClick={AuthModalCtx.closeAuthModal}>
         <div className={classes.authForm}>
-          <h2>Sign Up</h2>
+          <RectangleStackIcon className={classes.logo} />
+          <div className={classes.content}>
+            <h2>Welcome to ToolBox</h2>
+            <p>Create an account to start saving tools.</p>
+          </div>
           <button onClick={googleLogin} className="btn-alt">
             <IconContext.Provider value={{ size: "18px" }}>
-                <FcGoogle className={classes.icon} />
+              <FcGoogle className={classes.icon} />
             </IconContext.Provider>
             <span>Continue with Google</span>
           </button>

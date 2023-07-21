@@ -14,6 +14,7 @@ import AuthModal from "./componenents/AuthModal";
 import AccountPage from "./pages/AccountPage";
 import { useContext } from "react";
 import AuthModalContext from "./store/AuthModalContext";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   console.log(possibleFilterCombos);
@@ -83,6 +84,7 @@ function App() {
           <Route path="/account">
             <AccountPage />
           </Route>
+          <Route component={NotFoundPage} />
         </Switch>
         {AuthModalCtx.authModalIsOpen && <AuthModal />}
       </Layout>

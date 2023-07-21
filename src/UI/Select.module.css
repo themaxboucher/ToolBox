@@ -26,6 +26,11 @@
 
 .selectBtn svg {
   height: 18px;
+  opacity: 0.8;
+}
+
+.selectBtn span {
+  opacity: 0.8;
 }
 
 .dropdown {

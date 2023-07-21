@@ -1,10 +1,12 @@
+import Card from "../UI/Card";
 import classes from "./UserInfo.module.css";
+import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid";
+
 
 // Firebase imports
 import { auth } from "../Utilities/firebase";
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Card from "../UI/Card";
 
 function UserInfo() {
   const [user] = useAuthState(auth);
@@ -30,6 +32,7 @@ function UserInfo() {
         </div>
         <button onClick={logout} className="btn-alt">
           <span>Logout</span>
+          <ArrowRightOnRectangleIcon className={classes.icon} />
         </button>
       </div>
     </Card>

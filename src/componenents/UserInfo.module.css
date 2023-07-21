@@ -1,23 +1,23 @@
 .userInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .userInfo > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 .userInfo img {
-    height: 75px;
-    width: 75px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+  height: 75px;
+  width: 75px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
 }
 
 .userInfo p {
-    opacity: 0.8;
+  opacity: 0.8;
 }

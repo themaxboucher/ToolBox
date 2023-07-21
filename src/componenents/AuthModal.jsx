@@ -2,6 +2,8 @@ import Modal from "../UI/Modal";
 import ModalBackdrop from "../UI/ModalBackdrop";
 import classes from "./AuthModal.module.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { FcGoogle } from "react-icons/fc";
+import { IconContext } from "react-icons";
 
 // Firebase imports
 import { auth } from "../Utilities/firebase";
@@ -31,6 +33,9 @@ function AuthModal(props) {
         <div className={classes.authForm}>
           <h2>Sign Up</h2>
           <button onClick={googleLogin} className="btn-alt">
+            <IconContext.Provider value={{ size: "18px" }}>
+                <FcGoogle className={classes.icon} />
+            </IconContext.Provider>
             <span>Continue with Google</span>
           </button>
         </div>

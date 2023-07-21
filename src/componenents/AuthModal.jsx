@@ -35,7 +35,7 @@ function AuthModal(props) {
           <RectangleStackIcon className={classes.logo} />
           <div className={classes.content}>
             <h2>Welcome to ToolBox</h2>
-            <p>Create an account to start saving tools.</p>
+            <p>Create an account to start saving AI tools.</p>
           </div>
           <button onClick={googleLogin} className="btn-alt">
             <IconContext.Provider value={{ size: "18px" }}>

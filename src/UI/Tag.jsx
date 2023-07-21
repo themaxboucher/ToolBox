@@ -5,6 +5,7 @@ import {
   possibleFilterCombos,
   priceOptions,
 } from "../data/FilterOptions";
+import toKebabCase from "../helperFunctions/toKebabCase";
 
 function Tag(props) {
   function filterIsSelected() {
@@ -19,24 +20,24 @@ function Tag(props) {
   function tagPath() {
     const currentPath = useLocation().pathname.slice(1);
     const currentPathIsPrice = priceOptions
-      .map((option) => option.toLowerCase())
+      .map((option) => toKebabCase(option))
       .some((option) => `${option}-tools` === currentPath);
     const currentPathIsCategory = categoryOptions
-      .map((option) => option.toLowerCase())
+      .map((option) => toKebabCase(option))
       .some((option) => `${option}-tools` === currentPath);
     const currentPathIsCompound = possibleFilterCombos.some(
       (combo) =>
-        `${combo.priceFilter.toLowerCase()}-${combo.categoryFilter.toLowerCase()}-tools` ===
+        `${toKebabCase(combo.priceFilter)}-${toKebabCase(combo.categoryFilter)}-tools` ===
         currentPath
     );
     const currentCompoundFilter = possibleFilterCombos.find(
       (combo) =>
-        `${combo.priceFilter.toLowerCase()}-${combo.categoryFilter.toLowerCase()}-tools` ===
+        `${toKebabCase(combo.priceFilter)}-${toKebabCase(combo.categoryFilter)}-tools` ===
         currentPath
     );
 
     if (currentPath) {
-      if (currentPath === `${props.children.toLowerCase()}-tools`) {
+      if (currentPath === `${toKebabCase(props.children)}-tools`) {
         return "/";
       } else if (
         (currentPathIsPrice && props.type === "price") ||
@@ -48,7 +49,7 @@ function Tag(props) {
         ) {
           return "/";
         } else {
-          return `/${props.children.toLowerCase()}-tools`;
+          return `/${toKebabCase(props.children)}-tools`;
         }
       } else if (currentPathIsPrice && props.type === "category") {
         if (props.children === "Featured") {
@@ -57,13 +58,13 @@ function Tag(props) {
           return `/${currentPath.substring(
             0,
             currentPath.length - 6
-          )}-${props.children.toLowerCase()}-tools`;
+          )}-${toKebabCase(props.children)}-tools`;
         }
       } else if (currentPathIsCategory && props.type === "price") {
         if (props.children === "All") {
           return currentPath;
         } else {
-          return `/${props.children.toLowerCase()}-${currentPath}`;
+          return `/${toKebabCase(props.children)}-${currentPath}`;
         }
       } else if (currentPathIsCompound && props.type === "category") {
         if (
@@ -78,7 +79,7 @@ function Tag(props) {
           return `/${currentPath.substring(
             0,
             currentCompoundFilter.priceFilter.length
-          )}-${props.children.toLowerCase()}-tools`;
+          )}-${toKebabCase(props.children)}-tools`;
         }
       } else if (currentPathIsCompound && props.type === "price") {
         if (
@@ -90,7 +91,7 @@ function Tag(props) {
             currentPath.length
           )}`;
         } else {
-          return `/${props.children.toLowerCase()}-${currentPath.substring(
+          return `/${toKebabCase(props.children)}-${currentPath.substring(
             currentCompoundFilter.priceFilter.length + 1,
             currentPath.length
           )}`;
@@ -106,7 +107,7 @@ function Tag(props) {
         (props.type === "price" && props.children !== "All") ||
         (props.type === "category" && props.children !== "Featured")
       ) {
-        return `/${props.children.toLowerCase()}-tools`;
+        return `/${toKebabCase(props.children)}-tools`;
       }
     }
   }

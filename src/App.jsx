@@ -15,19 +15,18 @@ import AccountPage from "./pages/AccountPage";
 import { useContext } from "react";
 import AuthModalContext from "./store/AuthModalContext";
 import NotFoundPage from "./pages/NotFoundPage";
+import toKebabCase from "./helperFunctions/toKebabCase";
 
 function App() {
-  console.log(possibleFilterCombos);
-
   function filterComboPath(priceFilter, categoryFilter) {
     if (priceFilter === "All" && categoryFilter == "Featured") {
       return "/";
     } else if (priceFilter === "All" && categoryFilter !== "Featured") {
-      return `/${categoryFilter}-tools`;
+      return `/${toKebabCase(categoryFilter)}-tools`;
     } else if (priceFilter !== "All" && categoryFilter === "Featured") {
-      return `/${priceFilter}-tools`;
+      return `/${toKebabCase(priceFilter)}-tools`;
     } else if (priceFilter !== "All" && categoryFilter !== "Featured") {
-      return `/${priceFilter}-${categoryFilter}-tools`;
+      return `/${toKebabCase(priceFilter)}-${toKebabCase(categoryFilter)}-tools`;
     }
   }
 

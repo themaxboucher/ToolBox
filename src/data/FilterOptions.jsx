@@ -3,7 +3,7 @@ export const categoryOptions = [
   "Featured",
   "Chat",
   "Writing",
-  "Image",
+  "Image Generation",
   "Video",
   "Audio",
   "Code",

@@ -94,7 +94,7 @@ function Tool(props) {
                 </div>
               </div>
               <div className={classes.links}>
-                <a href={props.link} target="_blank" className="btn">
+                <a href={props.link} target="_blank" className="btn-alt">
                   Visit
                 </a>
                 <a className="btn" onClick={saveClickHandler}>

@@ -5,11 +5,16 @@
   align-items: center;
   width: 30rem;
   padding: 30px 80px;
+  text-align: center;
 }
 
 .authForm .content {
   margin-bottom: 25px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .authForm p {

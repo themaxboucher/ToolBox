@@ -1,12 +1,11 @@
-import Card from "../UI/Card";
 import classes from "./UserInfo.module.css";
-import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid";
-
+import { ArrowRightOnRectangleIcon, BookmarkIcon, UserIcon } from "@heroicons/react/24/solid";
 
 // Firebase imports
 import { auth } from "../Utilities/firebase";
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Card from "../UI/Card";
 
 function UserInfo() {
   const [user] = useAuthState(auth);
@@ -19,23 +18,26 @@ function UserInfo() {
     }
   };
   return (
-    <Card>
-      <div className={classes.userInfo}>
-        <div>
-          <div>
-            <img src={user.photoURL} alt={user.displayName} />
+    <>
+      <div className={classes.margin}>
+        <Card>
+          <div className={classes.userInfo}>
+            <div>
+              <img src={user.photoURL} alt={user.displayName} />
+              <div>
+                <h3>{user.displayName}</h3>
+                <p>{user.email}</p>
+              </div>
+            </div>
+            <button onClick={logout} className="btn-alt">
+              <ArrowRightOnRectangleIcon className={classes.icon} />
+              <span>Logout</span>
+            </button>
           </div>
-          <div>
-            <h3>{user.displayName}</h3>
-            <p>{user.email}</p>
-          </div>
-        </div>
-        <button onClick={logout} className="btn-alt">
-          <span>Logout</span>
-          <ArrowRightOnRectangleIcon className={classes.icon} />
-        </button>
+        </Card>
       </div>
-    </Card>
+      <h2><BookmarkIcon className={classes.icon} /><span>Saved Tools</span></h2>
+    </>
   );
 }
 

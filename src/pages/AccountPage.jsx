@@ -17,7 +17,6 @@ function AccountPage() {
     return (
       <section>
         <UserInfo />
-        <h2>Saved Tools</h2>
         <List
           filterCombo={{ priceFilter: "All", categoryFilter: "Featured" }}
         />

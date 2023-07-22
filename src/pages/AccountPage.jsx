@@ -18,7 +18,7 @@ function AccountPage() {
       <section>
         <UserInfo />
         <List
-          filterCombo={{ priceFilter: "All", categoryFilter: "Featured" }}
+          filters="Saved"
         />
       </section>
     );

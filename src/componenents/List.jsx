@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 // Firebase imports
-import { collection, getDocs, query, where, limit } from "firebase/firestore";
+import { collection, getDocs, query, where, orderBy, limit } from "firebase/firestore";
 import { db } from "../Utilities/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../Utilities/firebase";
@@ -20,6 +20,7 @@ function List(props) {
       const savedQuery = query(
         collection(db, "tools"),
         where("savedBy", "array-contains", user.uid),
+        orderBy("dateCreated"),
         limit(200)
       );
       setQueryType(savedQuery);
@@ -27,7 +28,12 @@ function List(props) {
       filters.priceFilter === "All" &&
       filters.categoryFilter === "Featured"
     ) {
-      const allQuery = query(collection(db, "tools"), limit(200));
+      const allQuery = query(
+        collection(db, "tools"),
+        orderBy("saves", "desc"),
+        orderBy("dateCreated"),
+        limit(200)
+      );
       setQueryType(allQuery);
     } else if (
       filters.priceFilter !== "All" &&
@@ -36,6 +42,8 @@ function List(props) {
       const pricingQuery = query(
         collection(db, "tools"),
         where("pricing", "==", filters.priceFilter),
+        orderBy("saves", "desc"),
+        orderBy("dateCreated"),
         limit(200)
       );
       setQueryType(pricingQuery);
@@ -46,6 +54,8 @@ function List(props) {
       const categoryQuery = query(
         collection(db, "tools"),
         where("tags", "array-contains", filters.categoryFilter),
+        orderBy("saves", "desc"),
+        orderBy("dateCreated"),
         limit(200)
       );
       setQueryType(categoryQuery);
@@ -57,6 +67,8 @@ function List(props) {
         collection(db, "tools"),
         where("pricing", "==", filters.priceFilter),
         where("tags", "array-contains", filters.categoryFilter),
+        orderBy("saves", "desc"),
+        orderBy("dateCreated"),
         limit(200)
       );
       setQueryType(compoundQuery);
@@ -99,10 +111,7 @@ function List(props) {
         </div>
       ) : (
         toolsData.map((toolObject) => (
-          <Tool
-            key={toolObject.id}
-            toolObject={toolObject}
-          />
+          <Tool key={toolObject.id} toolObject={toolObject} />
         ))
       )}
     </ul>

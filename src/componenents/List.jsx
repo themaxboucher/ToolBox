@@ -98,17 +98,10 @@ function List(props) {
           </p>
         </div>
       ) : (
-        toolsData.map((item) => (
+        toolsData.map((toolObject) => (
           <Tool
-            key={item.name}
-            title={item.name}
-            thumbnail={item.thumbnail}
-            tagline={item.tagline}
-            description={item.description}
-            link={item.link}
-            price={item.pricing}
-            tags={item.tags}
-            keyFeatures={item.keyFeatures}
+            key={toolObject.id}
+            toolObject={toolObject}
           />
         ))
       )}

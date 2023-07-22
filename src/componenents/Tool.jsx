@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BookmarkIcon } from "@heroicons/react/24/outline";
+import { BookmarkIcon } from "@heroicons/react/24/solid";
 import Card from "../UI/Card";
 import Modal from "../UI/Modal";
 import ModalBackdrop from "../UI/ModalBackdrop";
@@ -49,7 +49,9 @@ function Tool(props) {
   useEffect(() => {
     if (user) {
       function checkIfSaved() {
-        const result = toolObject.savedBy.some((userIds) => userIds === user.uid);
+        const result = toolObject.savedBy.some(
+          (userIds) => userIds === user.uid
+        );
         setIsSavedByUser(result);
       }
 
@@ -60,7 +62,7 @@ function Tool(props) {
   async function addToSaved() {
     try {
       setIsSavedByUser(true);
-      setSavesNum(prev => prev + 1);
+      setSavesNum((prev) => prev + 1);
       await updateDoc(toolRef, {
         saves: increment(1),
       });
@@ -69,7 +71,7 @@ function Tool(props) {
       });
     } catch (error) {
       setIsSavedByUser(false);
-      setSavesNum(prev => prev - 1);
+      setSavesNum((prev) => prev - 1);
       console.log(error);
     }
   }
@@ -77,7 +79,7 @@ function Tool(props) {
   async function removeFromSaved() {
     try {
       setIsSavedByUser(false);
-      setSavesNum(prev => prev - 1);
+      setSavesNum((prev) => prev - 1);
       await updateDoc(toolRef, {
         saves: increment(-1),
       });
@@ -86,7 +88,7 @@ function Tool(props) {
       });
     } catch (error) {
       setIsSavedByUser(true);
-      setSavesNum(prev => prev + 1);
+      setSavesNum((prev) => prev + 1);
       console.log(error);
     }
   }
@@ -131,9 +133,22 @@ function Tool(props) {
             <div className={classes.links}>
               <a className={classes.actions} onClick={saveClickHandler}>
                 {isSavedByUser ? (
-                  <div>SAVED</div>
-                ) : (
                   <BookmarkIcon className={classes.icon} />
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className={classes.icon}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
+                    />
+                  </svg>
                 )}
                 <span>{savesNum.toString()}</span>
               </a>
@@ -167,9 +182,22 @@ function Tool(props) {
                 </a>
                 <a className="btn" onClick={saveClickHandler}>
                   {isSavedByUser ? (
-                    <div>SAVED</div>
-                  ) : (
                     <BookmarkIcon className={classes.icon} />
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className={classes.icon}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
+                      />
+                    </svg>
                   )}
                   <span>Save</span>
                 </a>

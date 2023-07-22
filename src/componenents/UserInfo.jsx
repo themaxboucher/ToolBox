@@ -1,11 +1,16 @@
 import classes from "./UserInfo.module.css";
-import { ArrowRightOnRectangleIcon, BookmarkIcon, UserIcon } from "@heroicons/react/24/solid";
+import {
+  ArrowRightOnRectangleIcon,
+  BookmarkIcon,
+  ChevronLeftIcon,
+} from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
+import Card from "../UI/Card";
 
 // Firebase imports
 import { auth } from "../Utilities/firebase";
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Card from "../UI/Card";
 
 function UserInfo() {
   const [user] = useAuthState(auth);
@@ -19,6 +24,10 @@ function UserInfo() {
   };
   return (
     <>
+      <Link to="/" className={classes.goBack}>
+        <ChevronLeftIcon />
+        <span>Back to home page</span>
+      </Link>
       <div className={classes.margin}>
         <Card>
           <div className={classes.userInfo}>
@@ -36,7 +45,10 @@ function UserInfo() {
           </div>
         </Card>
       </div>
-      <h2><BookmarkIcon className={classes.icon} /><span>Saved Tools</span></h2>
+      <h2>
+        <BookmarkIcon className={classes.icon} />
+        <span>Saved Tools</span>
+      </h2>
     </>
   );
 }

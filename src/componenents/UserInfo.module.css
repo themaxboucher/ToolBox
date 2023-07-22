@@ -44,3 +44,19 @@ h2 .icon {
   height: 22px;
   color: #636cfe;
 }
+
+.goBack {
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.goBack svg {
+  height: 16px;
+}

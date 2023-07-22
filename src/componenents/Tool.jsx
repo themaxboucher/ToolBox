@@ -123,7 +123,7 @@ function Tool(props) {
                 </h3>
                 <p>{toolObject.tagline}</p>
                 <p className={classes.tags}>
-                  <span>{toolObject.pricing}</span> •{" "}
+                  <span>{toolObject.pricing}</span>•
                   {toolObject.tags.map((tag) => (
                     <a key={tag}>{tag}</a>
                   ))}
@@ -166,10 +166,10 @@ function Tool(props) {
                   <img src={toolObject.thumbnail} alt={toolObject.title}></img>
                 </div>
                 <div className={classes.content}>
-                  <h2>{toolObject.title}</h2>
+                  <h2>{toolObject.name}</h2>
                   <p className={classes.tagline}>{toolObject.tagline}</p>
                   <p className={classes.tags}>
-                    <span>{toolObject.pricing}</span> •{" "}
+                    <span>{toolObject.pricing}</span>•
                     {toolObject.tags.map((tag) => (
                       <a key={tag}>{tag}</a>
                     ))}

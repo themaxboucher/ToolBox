@@ -84,8 +84,8 @@ function Tool(props) {
                 </div>
                 <div className={classes.content}>
                   <h2>{props.title}</h2>
-                  <p>{props.tagline}</p>
-                  <p className={classes.price}>
+                  <p className={classes.tagline}>{props.tagline}</p>
+                  <p className={classes.tags}>
                     <span>{props.price}</span> •{" "}
                     {props.tags.map((tag) => (
                       <a key={tag}>{tag}</a>
@@ -104,7 +104,7 @@ function Tool(props) {
               </div>
             </div>
 
-            <div>
+            <div className={classes.description}>
               <p>{props.description}</p>
             </div>
 

@@ -109,6 +109,10 @@ h3 .icon {
   width: 60rem;
 }
 
+.modal .thumbnail {
+  margin-bottom: 15px;
+}
+
 .modal .content h2 {
   font-size: 24px;
 }
@@ -121,15 +125,24 @@ h3 .icon {
   gap: 6px;
 }
 
-.modal .content p {
-  font-size: 16px;
+.modal .content .tagline {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.modal .content .tags {
+  font-size: 14px;
 }
 
 .modal .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+}
+
+.modal .description {
+  margin-bottom: 15px;
 }
 
 .modal .keyFeatures {

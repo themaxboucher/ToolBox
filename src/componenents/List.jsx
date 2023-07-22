@@ -4,7 +4,14 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 // Firebase imports
-import { collection, getDocs, query, where, orderBy, limit } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  orderBy,
+  limit,
+} from "firebase/firestore";
 import { db } from "../Utilities/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../Utilities/firebase";
@@ -102,11 +109,18 @@ function List(props) {
     <ul className={classes.list}>
       {toolsData === null ? (
         <h2>Loading...</h2>
-      ) : toolsData.length === 0 ? (
+      ) : toolsData.length === 0 && filters !== "Saved" ? (
         <div className={classes.listFallback}>
           <h2>There are currently no AI tools matching those filters.</h2>
           <p>
             Feel free to submit a tool <Link to="/submit">here</Link>.
+          </p>
+        </div>
+      ) : toolsData.length === 0 && filters === "Saved" ? (
+        <div className={classes.listFallback}>
+          <h2>You haven't saved any tools yet.</h2>
+          <p>
+            Go save tools <Link to="/">here</Link>.
           </p>
         </div>
       ) : (

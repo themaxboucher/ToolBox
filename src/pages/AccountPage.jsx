@@ -7,11 +7,11 @@ import { auth } from "../Utilities/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 function AccountPage() {
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   // Block page from non authenticated users
   const history = useHistory();
-  if (!user) history.replace("/");
+  if (!user && !loading) history.replace("/");
 
   if (user) // Only render content if user is authenticated
     return (

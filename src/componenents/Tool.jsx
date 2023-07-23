@@ -123,7 +123,23 @@ function Tool(props) {
                 </h3>
                 <p>{toolObject.tagline}</p>
                 <p className={classes.tags}>
-                  <span>{toolObject.pricing}</span>•
+                  {toolObject.pricing.free && toolObject.pricing.paid && (
+                    <span>
+                      <a>Free</a> +{" "}
+                      <a>{toolObject.pricing.price.toLowerCase()}</a>
+                    </span>
+                  )}
+                  {toolObject.pricing.free && !toolObject.pricing.paid && (
+                    <span>
+                      <a>Free</a>
+                    </span>
+                  )}
+                  {!toolObject.pricing.free && toolObject.pricing.paid && (
+                    <span>
+                      <a>{toolObject.pricing.price}</a>
+                    </span>
+                  )}
+                  •
                   {toolObject.tags.map((tag) => (
                     <a key={tag}>{tag}</a>
                   ))}
@@ -169,7 +185,23 @@ function Tool(props) {
                   <h2>{toolObject.name}</h2>
                   <p className={classes.tagline}>{toolObject.tagline}</p>
                   <p className={classes.tags}>
-                    <span>{toolObject.pricing}</span>•
+                    {toolObject.pricing.free && toolObject.pricing.paid && (
+                      <span>
+                        <a>Free</a> +{" "}
+                        <a>{toolObject.pricing.paid.toLowerCase()}</a>
+                      </span>
+                    )}
+                    {toolObject.pricing.free && !toolObject.pricing.paid && (
+                      <span>
+                        <a>Free</a>
+                      </span>
+                    )}
+                    {!toolObject.pricing.free && toolObject.pricing.paid && (
+                      <span>
+                        <a>{toolObject.pricing.paid}</a>
+                      </span>
+                    )}
+                    •
                     {toolObject.tags.map((tag) => (
                       <a key={tag}>{tag}</a>
                     ))}

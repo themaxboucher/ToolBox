@@ -44,17 +44,29 @@ function List(props) {
       );
       setQueryType(allQuery);
     } else if (
-      filters.priceFilter !== "All" &&
+      filters.priceFilter === "Free" &&
       filters.categoryFilter === "Featured"
     ) {
-      const pricingQuery = query(
+      const freePricingQuery = query(
         collection(db, "tools"),
-        where("pricing", "==", filters.priceFilter),
+        where("pricing.free", "==", true),
         orderBy("saves", "desc"),
         orderBy("dateCreated"),
         limit(200)
       );
-      setQueryType(pricingQuery);
+      setQueryType(freePricingQuery);
+    } else if (
+      filters.priceFilter === "Paid" &&
+      filters.categoryFilter === "Featured"
+    ) {
+      const paidPricingQuery = query(
+        collection(db, "tools"),
+        where("pricing.paid", "==", true),
+        orderBy("saves", "desc"),
+        orderBy("dateCreated"),
+        limit(200)
+      );
+      setQueryType(paidPricingQuery);
     } else if (
       filters.priceFilter === "All" &&
       filters.categoryFilter !== "Featured"
@@ -68,19 +80,33 @@ function List(props) {
       );
       setQueryType(categoryQuery);
     } else if (
-      filters.priceFilter !== "All" &&
+      filters.priceFilter === "Free" &&
       filters.categoryFilter !== "Featured"
     ) {
-      const compoundQuery = query(
+      const freeCompoundQuery = query(
         collection(db, "tools"),
-        where("pricing", "==", filters.priceFilter),
+        where("pricing.free", "==", true),
         where("tags", "array-contains", filters.categoryFilter),
         orderBy("saves", "desc"),
         orderBy("dateCreated"),
         limit(200)
       );
-      setQueryType(compoundQuery);
+      setQueryType(freeCompoundQuery);
+    } else if (
+      filters.priceFilter !== "All" &&
+      filters.categoryFilter !== "Featured"
+    ) {
+      const paidCompoundQuery = query(
+        collection(db, "tools"),
+        where("pricing.paid", "==", true),
+        where("tags", "array-contains", filters.categoryFilter),
+        orderBy("saves", "desc"),
+        orderBy("dateCreated"),
+        limit(200)
+      );
+      setQueryType(paidCompoundQuery);
     }
+
   }, [filters, user]); // Execute the effect when filters change
 
   useEffect(() => {

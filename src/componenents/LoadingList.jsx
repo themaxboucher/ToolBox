@@ -5,7 +5,7 @@ function LoadingList(props) {
   const cards = [];
   for (let i = 0; i < props.repeatTimes; i++) {
     cards.push(
-      <Card>
+      <Card key={i}>
         <div className={classes.loadingList}>
           <div className={classes.right}>
             <div className={classes.thumbnail}></div>

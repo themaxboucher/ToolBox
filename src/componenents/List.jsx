@@ -15,6 +15,7 @@ import {
 import { db } from "../Utilities/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../Utilities/firebase";
+import LoadingList from "./LoadingList";
 
 function List(props) {
   const [toolsData, setToolsData] = useState(null);
@@ -108,7 +109,7 @@ function List(props) {
   return (
     <ul className={classes.list}>
       {toolsData === null ? (
-        <h2>Loading...</h2>
+        <LoadingList repeatTimes={30} />
       ) : toolsData.length === 0 && filters !== "Saved" ? (
         <div className={classes.listFallback}>
           <h2>There are currently no AI tools matching those filters.</h2>

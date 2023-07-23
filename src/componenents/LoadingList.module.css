@@ -51,7 +51,7 @@
   width: 25%;
   background-color: #1f1d2d;
   margin-bottom: 5px;
-  border-radius: 3px;
+  border-radius: 5px;
   animation: skeleton-loading 1s linear infinite alternate;
 }
 
@@ -60,7 +60,7 @@
   width: 70%;
   background-color: #1f1d2d;
   margin-bottom: 7px;
-  border-radius: 3px;
+  border-radius: 5px;
   animation: skeleton-loading 1s linear infinite alternate;
 }
 
@@ -68,7 +68,7 @@
   height: 14px;
   width: 40%;
   background-color: #1f1d2d;
-  border-radius: 3px;
+  border-radius: 5px;
   animation: skeleton-loading 1s linear infinite alternate;
 }
 

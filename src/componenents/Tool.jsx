@@ -125,23 +125,23 @@ function Tool(props) {
                 <p className={classes.tags}>
                   {toolObject.pricing.free && toolObject.pricing.paid && (
                     <span>
-                      <a>Free</a> +{" "}
-                      <a>{toolObject.pricing.price.toLowerCase()}</a>
+                      <span>Free</span> +{" "}
+                      <span>{toolObject.pricing.price.toLowerCase()}</span>
                     </span>
                   )}
                   {toolObject.pricing.free && !toolObject.pricing.paid && (
                     <span>
-                      <a>Free</a>
+                      <span>Free</span>
                     </span>
                   )}
                   {!toolObject.pricing.free && toolObject.pricing.paid && (
                     <span>
-                      <a>{toolObject.pricing.price}</a>
+                      <span>{toolObject.pricing.price}</span>
                     </span>
                   )}
                   •
                   {toolObject.tags.map((tag) => (
-                    <a key={tag}>{tag}</a>
+                    <span key={tag}>{tag}</span>
                   ))}
                 </p>
               </div>
@@ -187,23 +187,23 @@ function Tool(props) {
                   <p className={classes.tags}>
                     {toolObject.pricing.free && toolObject.pricing.paid && (
                       <span>
-                        <a>Free</a> +{" "}
-                        <a>{toolObject.pricing.paid.toLowerCase()}</a>
+                        <span>Free</span> +{" "}
+                        <span>{toolObject.pricing.price.toLowerCase()}</span>
                       </span>
                     )}
                     {toolObject.pricing.free && !toolObject.pricing.paid && (
                       <span>
-                        <a>Free</a>
+                        <span>Free</span>
                       </span>
                     )}
                     {!toolObject.pricing.free && toolObject.pricing.paid && (
                       <span>
-                        <a>{toolObject.pricing.paid}</a>
+                        <span>{toolObject.pricing.price}</span>
                       </span>
                     )}
                     •
                     {toolObject.tags.map((tag) => (
-                      <a key={tag}>{tag}</a>
+                      <span key={tag}>{tag}</span>
                     ))}
                   </p>
                 </div>

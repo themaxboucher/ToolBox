@@ -28,7 +28,7 @@ function List(props) {
       const savedQuery = query(
         collection(db, "tools"),
         where("savedBy", "array-contains", user.uid),
-        orderBy("dateCreated"),
+        orderBy("createdAt", "desc"),
         limit(200)
       );
       setQueryType(savedQuery);
@@ -39,7 +39,7 @@ function List(props) {
       const allQuery = query(
         collection(db, "tools"),
         orderBy("saves", "desc"),
-        orderBy("dateCreated"),
+        orderBy("createdAt", "desc"),
         limit(200)
       );
       setQueryType(allQuery);
@@ -51,7 +51,7 @@ function List(props) {
         collection(db, "tools"),
         where("pricing.free", "==", true),
         orderBy("saves", "desc"),
-        orderBy("dateCreated"),
+        orderBy("createdAt", "desc"),
         limit(200)
       );
       setQueryType(freePricingQuery);
@@ -63,7 +63,7 @@ function List(props) {
         collection(db, "tools"),
         where("pricing.paid", "==", true),
         orderBy("saves", "desc"),
-        orderBy("dateCreated"),
+        orderBy("createdAt", "desc"),
         limit(200)
       );
       setQueryType(paidPricingQuery);
@@ -75,7 +75,7 @@ function List(props) {
         collection(db, "tools"),
         where("tags", "array-contains", filters.categoryFilter),
         orderBy("saves", "desc"),
-        orderBy("dateCreated"),
+        orderBy("createdAt", "desc"),
         limit(200)
       );
       setQueryType(categoryQuery);
@@ -88,7 +88,7 @@ function List(props) {
         where("pricing.free", "==", true),
         where("tags", "array-contains", filters.categoryFilter),
         orderBy("saves", "desc"),
-        orderBy("dateCreated"),
+        orderBy("createdAt", "desc"),
         limit(200)
       );
       setQueryType(freeCompoundQuery);
@@ -101,7 +101,7 @@ function List(props) {
         where("pricing.paid", "==", true),
         where("tags", "array-contains", filters.categoryFilter),
         orderBy("saves", "desc"),
-        orderBy("dateCreated"),
+        orderBy("createdAt", "desc"),
         limit(200)
       );
       setQueryType(paidCompoundQuery);

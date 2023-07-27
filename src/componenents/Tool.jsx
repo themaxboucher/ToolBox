@@ -65,8 +65,6 @@ function Tool(props) {
       setSavesNum((prev) => prev + 1);
       await updateDoc(toolRef, {
         saves: increment(1),
-      });
-      await updateDoc(toolRef, {
         savedBy: arrayUnion(user.uid),
       });
     } catch (error) {
@@ -82,8 +80,6 @@ function Tool(props) {
       setSavesNum((prev) => prev - 1);
       await updateDoc(toolRef, {
         saves: increment(-1),
-      });
-      await updateDoc(toolRef, {
         savedBy: arrayRemove(user.uid),
       });
     } catch (error) {

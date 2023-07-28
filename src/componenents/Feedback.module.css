@@ -1,0 +1,66 @@
+.box {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.box > div {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box svg {
+  height: 30px;
+}
+
+.feedbackForm {
+    position: fixed;
+    bottom: 5.5rem;
+    right: 1.5rem;
+    width: 275px;
+}
+
+.feedbackForm > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.feedbackForm p {
+    opacity: 0.8;
+    line-height: 1.2;
+    font-size: 14px;
+}
+
+.feedbackForm form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.feedbackForm input,
+.feedbackForm textarea  {
+    font-size: 14px;
+    font-weight: 500;
+    background-color: transparent;
+    padding: 10px;
+    border: solid 1px #3F3D4D;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.2s;
+    outline-color: #636cfe;
+}
+
+.feedbackForm textarea {
+    resize: none;
+}

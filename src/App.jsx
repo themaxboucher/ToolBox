@@ -16,6 +16,7 @@ import { useContext } from "react";
 import AuthModalContext from "./store/AuthModalContext";
 import NotFoundPage from "./pages/NotFoundPage";
 import toKebabCase from "./helperFunctions/toKebabCase";
+import Feedback from "./componenents/Feedback";
 
 function App() {
   function filterComboPath(priceFilter, categoryFilter) {
@@ -87,6 +88,7 @@ function App() {
         </Switch>
         {AuthModalCtx.authModalIsOpen && <AuthModal />}
       </Layout>
+      <Feedback />
     </>
   );
 }

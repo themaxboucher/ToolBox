@@ -18,6 +18,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 .btn {
@@ -62,4 +63,8 @@
 
 .btn-alt:hover {
   background-color: #3F3D4D;
+}
+
+.btn svg {
+  height: 16px;
 }

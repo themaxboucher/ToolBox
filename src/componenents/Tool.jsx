@@ -117,7 +117,7 @@ function Tool(props) {
                     <ArrowTopRightOnSquareIcon className={classes.icon} />
                   </a>
                 </h3>
-                <p>{toolObject.tagline}</p>
+                <p className={classes.tagline}>{toolObject.tagline}</p>
                 <p className={classes.tags}>
                   {toolObject.pricing.free && toolObject.pricing.paid && (
                     <span>

@@ -11,3 +11,17 @@
   font-size: 14px;
   opacity: 0.8;
 }
+
+.sort .selecters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+  .sort {
+    flex-direction: column;
+  }
+}

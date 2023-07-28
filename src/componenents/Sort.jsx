@@ -6,8 +6,18 @@ function Sort(props) {
   return (
     <div className={classes.sort}>
       <label>SORT BY:</label>
-      <Select type="price" options={priceOptions} currentFilter={props.priceFilter} />
-      <Select type="category" options={categoryOptions} currentFilter={props.categoryFilter} />
+      <div className={classes.selecters}>
+        <Select
+          type="price"
+          options={priceOptions}
+          currentFilter={props.priceFilter}
+        />
+        <Select
+          type="category"
+          options={categoryOptions}
+          currentFilter={props.categoryFilter}
+        />
+      </div>
     </div>
   );
 }

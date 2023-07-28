@@ -19,6 +19,7 @@
 .thumbnail {
   width: 66px;
   height: 66px;
+  min-width: 66px;
 }
 
 .thumbnail img {
@@ -35,6 +36,10 @@
   align-items: center;
   gap: 6px;
   width: fit-content;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Set the desired number of lines to be displayed */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .content h3 a {
@@ -42,7 +47,7 @@
 }
 
 .content h3 a svg:hover {
-  color: #636CFE;
+  color: #636cfe;
 }
 
 .content h3:hover a {
@@ -55,16 +60,37 @@
   opacity: 0.8;
 }
 
-.content .tags {
-  font-size: 12px;
+.content .tagline {
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Set the desired number of lines to be displayed */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .content .tags {
+  font-size: 12px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  margin-top: 3px;
+  margin-top: 5px;
+}
+
+@media (max-width: 500px) {
+  .content .tags {
+    display: none;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .content h3 {
+    font-size: 16px;
+  }
 }
 
 .links {
@@ -84,7 +110,7 @@
   padding: 7px;
   border-radius: 6px;
   transition: 0.2s;
-  border: solid 1px #1F1D2D;
+  border: solid 1px #1f1d2d;
   text-decoration: none;
   font-weight: 600;
   font-size: 13px;
@@ -93,7 +119,7 @@
 }
 
 .actions:hover {
-  border-color: #636CFE;
+  border-color: #636cfe;
 }
 
 .icon {
@@ -102,12 +128,54 @@
 }
 
 h3 .icon {
-  color: #636CFE;
+  color: #636cfe;
 }
 
 .modal {
   padding: 40px 70px;
-  width: 60rem;
+  width: 55rem;
+}
+
+@media (max-width: 950px) {
+  .modal {
+    width: 90vw;
+    max-height: 95vh;
+    padding: 40px;
+  }
+  .modal .tags {
+    display: flex;
+  }
+}
+
+@media (max-width: 700px) {
+  .modal {
+    padding: 40px 20px;
+  }
+  .modal .top {
+    flex-direction: column;
+  }
+  .modal .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .modal .right .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  .modal .thumbnail {
+    height: 80px;
+    width: 80px;
+  }
+  .modal .content .tagline {
+    -webkit-line-clamp: 4;
+  }
 }
 
 .modal .thumbnail {
@@ -140,6 +208,7 @@ h3 .icon {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
+  gap: 2rem;
 }
 
 .modal .description {

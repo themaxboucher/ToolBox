@@ -33,7 +33,7 @@ function UserInfo() {
           <div className={classes.userInfo}>
             <div>
               <img src={user.photoURL} alt={user.displayName} />
-              <div>
+              <div className={classes.textInfo}>
                 <h3>{user.displayName}</h3>
                 <p>{user.email}</p>
               </div>

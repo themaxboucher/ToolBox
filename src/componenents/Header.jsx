@@ -22,25 +22,6 @@ function Header() {
           <span>ToolBox</span>
         </Link>
       </div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/submit" className={classes.link}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/submit" className={classes.link}>
-              Newsletter
-            </Link>
-          </li>
-          <li>
-            <Link to="/submit" className={classes.link}>
-              Submit
-            </Link>
-          </li>
-        </ul>
-      </nav>
       <div className={classes.auth}>
         {!user ? (
           <>
@@ -50,11 +31,14 @@ function Header() {
             </button>
           </>
         ) : (
-          <div>
+          <>
+            <Link to="/submit" className={classes.link}>
+              Submit
+            </Link>
             <Link to="/account">
               <img src={user.photoURL} alt={user.displayName} className={classes.profilePic} />
             </Link>
-          </div>
+          </>
         )}
       </div>
     </header>

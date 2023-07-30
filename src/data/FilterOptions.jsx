@@ -6,9 +6,11 @@ export const categoryOptions = [
   "Image Generation",
   "Video",
   "Audio",
+  "Podcast",
   "Code",
   "SMM",
   "SEO",
+  "API",
 ];
 
 // filterArray is an array of arrays that together contain objects with all the different filter combinations

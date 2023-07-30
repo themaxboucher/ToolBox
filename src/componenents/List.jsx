@@ -27,6 +27,7 @@ function List(props) {
     if (user && filters == "Saved") {
       const savedQuery = query(
         collection(db, "tools"),
+        where("public", "==", true),
         where("savedBy", "array-contains", user.uid),
         orderBy("createdAt", "desc"),
         limit(200)
@@ -38,6 +39,7 @@ function List(props) {
     ) {
       const allQuery = query(
         collection(db, "tools"),
+        where("public", "==", true),
         orderBy("saves", "desc"),
         orderBy("createdAt", "desc"),
         limit(200)
@@ -49,6 +51,7 @@ function List(props) {
     ) {
       const freePricingQuery = query(
         collection(db, "tools"),
+        where("public", "==", true),
         where("pricing.free", "==", true),
         orderBy("saves", "desc"),
         orderBy("createdAt", "desc"),
@@ -61,6 +64,7 @@ function List(props) {
     ) {
       const paidPricingQuery = query(
         collection(db, "tools"),
+        where("public", "==", true),
         where("pricing.paid", "==", true),
         orderBy("saves", "desc"),
         orderBy("createdAt", "desc"),
@@ -73,6 +77,7 @@ function List(props) {
     ) {
       const categoryQuery = query(
         collection(db, "tools"),
+        where("public", "==", true),
         where("tags", "array-contains", filters.categoryFilter),
         orderBy("saves", "desc"),
         orderBy("createdAt", "desc"),
@@ -85,6 +90,7 @@ function List(props) {
     ) {
       const freeCompoundQuery = query(
         collection(db, "tools"),
+        where("public", "==", true),
         where("pricing.free", "==", true),
         where("tags", "array-contains", filters.categoryFilter),
         orderBy("saves", "desc"),
@@ -98,6 +104,7 @@ function List(props) {
     ) {
       const paidCompoundQuery = query(
         collection(db, "tools"),
+        where("public", "==", true),
         where("pricing.paid", "==", true),
         where("tags", "array-contains", filters.categoryFilter),
         orderBy("saves", "desc"),

@@ -94,6 +94,9 @@ function SubmitForm() {
       };
       await addDoc(collection(db, "tools"), docData);
       setIsSuccess(true);
+      setEnteredFree(false);
+      setEnteredPaid(false);
+      setEnteredTags([]);
     } catch (error) {
       console.log(error);
     }

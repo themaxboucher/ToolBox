@@ -136,7 +136,7 @@ function Tool(props) {
                     </span>
                   )}
                   •
-                  {toolObject.tags.map((tag) => (
+                  {toolObject.tags.sort().map((tag) => (
                     <span key={tag}>{tag}</span>
                   ))}
                 </p>
@@ -198,7 +198,7 @@ function Tool(props) {
                       </span>
                     )}
                     •
-                    {toolObject.tags.map((tag) => (
+                    {toolObject.tags.sort().map((tag) => (
                       <span key={tag}>{tag}</span>
                     ))}
                   </p>

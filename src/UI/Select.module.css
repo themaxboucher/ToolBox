@@ -1,3 +1,7 @@
+.select {
+  position: relative;
+}
+
 .selectBtn {
   font-size: 14px;
   font-weight: 500;
@@ -9,7 +13,7 @@
   );
   backdrop-filter: blur(5px);
   padding: 8px 15px;
-  border: solid 1px #3F3D4D;
+  border: solid 1px #3f3d4d;
   border-radius: 6px;
   cursor: pointer;
   display: flex;
@@ -21,7 +25,7 @@
 }
 
 .selectBtn:hover {
-  border-color: #636CFE;
+  border-color: #636cfe;
 }
 
 .selectBtn svg {
@@ -40,7 +44,17 @@
 .dropdown {
   z-index: 2;
   position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
   max-width: 390px;
+  width: max-content;
+  min-width: 100%;
+}
+
+@media (max-width: 700px) {
+  .dropdown {
+    width: 100%;
+  }
 }
 
 .dropdown div {

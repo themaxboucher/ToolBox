@@ -49,7 +49,7 @@ function Select(props) {
   }
 
   return (
-    <div ref={dropdownRef}>
+    <div className={classes.select} ref={dropdownRef}>
       <button className={classes.selectBtn} onClick={toggleOptionsHandler}>
         <span>{selectBtnText()}</span>
         <ChevronDownIcon className={optionsAreOpen && classes.rotate} />

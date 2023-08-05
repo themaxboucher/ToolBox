@@ -12,6 +12,9 @@ export const categoryOptions = sortArrayWithFirstElement([
   "SMM",
   "SEO",
   "API",
+  "Meeting",
+  "Marketing",
+  "CRM",
 ]);
 
 // Sort categoryOptions by alphabetical order but keep "Featured" as the first option

@@ -36,22 +36,14 @@
   align-items: center;
   gap: 6px;
   width: fit-content;
-  display: -webkit-box;
-  -webkit-line-clamp: 1; /* Set the desired number of lines to be displayed */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
-.content h3 a {
-  display: none;
+.content h3 a svg {
+  color: transparent;
 }
 
-.content h3 a svg:hover {
+.content h3:hover a svg {
   color: #636cfe;
-}
-
-.content h3:hover a {
-  display: block;
 }
 
 .content p {

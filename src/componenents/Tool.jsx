@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
-import { BookmarkIcon } from "@heroicons/react/24/solid";
+import {
+  BookmarkIcon,
+  BoltIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/react/24/solid";
 import Card from "../UI/Card";
 import Modal from "../UI/Modal";
 import ModalBackdrop from "../UI/ModalBackdrop";
 import classes from "./Tool.module.css";
 import Tag from "../UI/Tag";
-import {
-  ArrowTopRightOnSquareIcon,
-  BoltIcon,
-  BookOpenIcon,
-} from "@heroicons/react/24/solid";
 import { useContext } from "react";
 import AuthModalContext from "../store/AuthModalContext";
 

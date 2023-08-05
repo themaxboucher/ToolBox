@@ -226,7 +226,7 @@ function Tool(props) {
                       />
                     </svg>
                   )}
-                  <span>Save</span>
+                  {isSavedByUser ? <span>Saved</span> : <span>Save</span>}
                 </a>
               </div>
             </div>

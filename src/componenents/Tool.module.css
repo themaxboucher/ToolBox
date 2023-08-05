@@ -82,6 +82,10 @@
 
   .content h3 {
     font-size: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Set the desired number of lines to be displayed */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 

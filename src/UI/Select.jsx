@@ -2,15 +2,17 @@ import { useRef, useState, useEffect } from "react";
 import classes from "./Select.module.css";
 import Card from "./Card";
 import Tag from "./Tag";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 function Select(props) {
   const [optionsAreOpen, setOptionsAreOpen] = useState(false);
   function toggleOptionsHandler() {
     if (optionsAreOpen) {
       setOptionsAreOpen(false);
+      console.log("close");
     } else {
       setOptionsAreOpen(true);
+      console.log("open");
     }
   }
 
@@ -50,7 +52,7 @@ function Select(props) {
     <div ref={dropdownRef}>
       <button className={classes.selectBtn} onClick={toggleOptionsHandler}>
         <span>{selectBtnText()}</span>
-        {optionsAreOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+        <ChevronDownIcon className={optionsAreOpen && classes.rotate} />
       </button>
       {optionsAreOpen && (
         <div className={classes.dropdown}>

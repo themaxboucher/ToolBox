@@ -29,6 +29,10 @@
   opacity: 0.8;
 }
 
+.rotate {
+  transform: rotate(180deg);
+}
+
 .selectBtn span {
   opacity: 0.8;
 }
@@ -36,7 +40,7 @@
 .dropdown {
   z-index: 2;
   position: absolute;
-  max-width: 350px;
+  max-width: 390px;
 }
 
 .dropdown div {

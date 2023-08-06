@@ -1,9 +1,28 @@
 .backgroundImage {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0.2;
-    z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(99, 107, 254);
+  background: -moz-linear-gradient(
+    170deg,
+    rgba(99, 107, 254, 1) 10%,
+    rgba(80, 126, 243, 1) 15%,
+    rgba(144, 224, 255, 0) 70%
+  );
+  background: -webkit-linear-gradient(
+    170deg,
+    rgba(99, 107, 254, 1) 10%,
+    rgba(80, 126, 243, 1) 15%,
+    rgba(144, 224, 255, 0) 70%
+  );
+  background: linear-gradient(
+    170deg,
+    rgba(99, 107, 254, 1) 10%,
+    rgba(80, 126, 243, 1) 15%,
+    rgba(144, 224, 255, 0) 70%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#636bfe",endColorstr="#90e0ff",GradientType=1);
+  opacity: 0.2;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
 }

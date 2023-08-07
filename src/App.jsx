@@ -1,5 +1,4 @@
 import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Header from "./componenents/Header";
 import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
@@ -27,19 +26,9 @@ function App() {
     } else if (priceFilter !== "All" && categoryFilter === "Featured") {
       return `/${toKebabCase(priceFilter)}-tools`;
     } else if (priceFilter !== "All" && categoryFilter !== "Featured") {
-      return `/${toKebabCase(priceFilter)}-${toKebabCase(categoryFilter)}-tools`;
-    }
-  }
-
-  function filterComboHeaderText(priceFilter, categoryFilter) {
-    if (priceFilter === "All" && categoryFilter == "Featured") {
-      return "Find the best new AI tools";
-    } else if (priceFilter === "All" && categoryFilter !== "Featured") {
-      return `AI ${categoryFilter} Tools`;
-    } else if (priceFilter !== "All" && categoryFilter === "Featured") {
-      return `${priceFilter} AI Tools`;
-    } else if (priceFilter !== "All" && categoryFilter !== "Featured") {
-      return `${priceFilter} AI ${categoryFilter} Tools`;
+      return `/${toKebabCase(priceFilter)}-${toKebabCase(
+        categoryFilter
+      )}-tools`;
     }
   }
 
@@ -50,9 +39,6 @@ function App() {
     <>
       <Layout>
         <Switch>
-          {/* <Route path="/" exact>
-            <HomePage />
-          </Route> */}
           {possibleFilterCombos.map((filterCombo) => (
             <Route
               path={filterComboPath(
@@ -63,13 +49,7 @@ function App() {
               exact
             >
               <section>
-                <Hero
-                  headerText={filterComboHeaderText(
-                    filterCombo.priceFilter,
-                    filterCombo.categoryFilter
-                  )}
-                  subheaderText={`Placeholder text.`}
-                />
+                <Hero filterCombo={filterCombo} />
                 <Sort
                   priceFilter={filterCombo.priceFilter}
                   categoryFilter={filterCombo.categoryFilter}

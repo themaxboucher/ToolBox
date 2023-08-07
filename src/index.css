@@ -4,8 +4,11 @@
   font-weight: 500;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #fff;
   background-color: #060419;
+  background-image: linear-gradient(#ffffff20 1px, transparent 1px), linear-gradient(90deg, #ffffff20 1px, transparent 1px);
+  background-size: 12em 12em;
+  background-position: center;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

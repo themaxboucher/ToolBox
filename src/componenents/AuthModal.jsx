@@ -1,7 +1,6 @@
 import Modal from "../UI/Modal";
 import ModalBackdrop from "../UI/ModalBackdrop";
 import classes from "./AuthModal.module.css";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { FcGoogle } from "react-icons/fc";
 import { IconContext } from "react-icons";
 import { RectangleStackIcon } from "@heroicons/react/24/solid";

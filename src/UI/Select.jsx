@@ -50,7 +50,7 @@ function Select(props) {
     <div className={classes.select} ref={dropdownRef}>
       <button className={classes.selectBtn} onClick={toggleOptionsHandler}>
         <span>{selectBtnText()}</span>
-        <ChevronDownIcon className={optionsAreOpen && classes.rotate} />
+        <ChevronDownIcon className={optionsAreOpen ? classes.rotate : undefined} />
       </button>
       {optionsAreOpen && (
         <div className={classes.dropdown}>

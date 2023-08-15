@@ -1,5 +1,5 @@
 import classes from "./Tag.module.css";
-import { Link, useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useLocation } from "react-router-dom";
 import {
   categoryOptions,
   possibleFilterCombos,

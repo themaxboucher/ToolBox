@@ -1,8 +1,4 @@
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import Header from "./componenents/Header";
-import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
-import HomePage from "./pages/HomePage";
+import { Route, Switch } from "react-router-dom";
 import SubmitPage from "./pages/SubmitPage";
 import Layout from "./layout/Layout";
 import { possibleFilterCombos } from "./data/FilterOptions";

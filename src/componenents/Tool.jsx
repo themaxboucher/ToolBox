@@ -8,7 +8,6 @@ import Card from "../UI/Card";
 import Modal from "../UI/Modal";
 import ModalBackdrop from "../UI/ModalBackdrop";
 import classes from "./Tool.module.css";
-import Tag from "../UI/Tag";
 import { useContext } from "react";
 import AuthModalContext from "../store/AuthModalContext";
 

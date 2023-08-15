@@ -135,10 +135,6 @@ function List(props) {
     }
   }, [queryType]); // Fetch data when queryType changes
 
-  useEffect(() => {
-    console.log(toolsData); // Log the updated array whenever it changes
-  }, [toolsData]);
-
   return (
     <ul className={classes.list}>
       {toolsData === null ? (

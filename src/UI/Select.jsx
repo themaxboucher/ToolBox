@@ -9,10 +9,8 @@ function Select(props) {
   function toggleOptionsHandler() {
     if (optionsAreOpen) {
       setOptionsAreOpen(false);
-      console.log("close");
     } else {
       setOptionsAreOpen(true);
-      console.log("open");
     }
   }
 

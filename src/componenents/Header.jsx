@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 import classes from "./Header.module.css";
 import { RectangleStackIcon } from "@heroicons/react/24/solid";
 import { useContext } from "react";
